@@ -25,33 +25,101 @@
 }
 
 body {
-  background-color: #261F3C;
+  background-color: #3B998C;
 }
 
 .navigation {
-  background-color: #110F16;
+  background-color: #477670;
   border-radius: 0px 0px 25px 25px;
   box-shadow: 5px 0px;
-  height: 150px;
+  font-family: 'akashiregular', sans-serif;
+  min-height: 150px;
+  margin-bottom: 5%;
 }
 
 .navigation__link {
-  background-color: #2D1D5F;
+  background-color: #2BCDB7;
   border-radius: 20px;
   box-shadow: 5px 0px;
   margin-top: 50px;
-  font-family: 'akashiregular', sans-serif;
   font-size: 2em;
   text-align: center;
-
 }
 
 .navigation__link:hover {
-  background-color: #2F0E9B;
+  background-color: #11FEDD;
 }
 
 .navigation__link--title {
-  font-family: 'akashiregular', sans-serif;
   font-size: 2.5em;
+  text-align: center;
+}
+
+.sidebar {
+  background-color: #477670;
+  border-radius: 25px 25px 25px 25px;
+  box-shadow: 5px 0px;
+  font-family: 'laconicregular', sans-serif;
+}
+
+.sidebar__text {
+  background-color: #2BCDB7;
+  border-bottom: 2px solid #000;
+  font-size: 1.2em;
+  padding: 5px;
+  text-align: center;
+}
+
+.sidebar__text--title {
+  border-bottom: 2px solid #000;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
+
+.sidebar__button {
+  background-color: #2BCDB7;
+  border-radius: 20px;
+  box-shadow: 5px 0px;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 10px 10px 10px 35px;
+  text-align: center;
+  width: 50%;
+}
+
+.sidebar__button--active {
+  background-color: #11FEDD;
+  border-radius: 20px;
+  box-shadow: 5px 0px;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 10px 10px 10px 35px;
+  text-align: center;
+  width: 50%;
+}
+
+.content {
+  background-color: #2BCDB7;
+  border-radius: 25px 25px 25px 25px;
+  box-shadow: 5px 0px;
+  font-family: 'laconicregular', sans-serif;
+}
+
+.content__text {
+  font-size: 1.2em;
+  padding: 10px;
+  text-align: left;
+  text-indent: 10%;
+}
+
+.content__text--title {
+  background-color: #477670;
+  border-bottom: 2px solid #000;
+  border-radius: 25px 25px 0px 0px;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 10px;
   text-align: center;
 }
