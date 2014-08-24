@@ -1,0 +1,1053 @@
+<?xml version="1.0"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD Simplified DocBook XML V4.1.2.5//EN" "http://www.oasis-open.org/docbook/xml/simple/4.1.2.5/sdocbook.dtd">
+<article role="specification">
+  <title>UML Model</title>
+  <title>Logical View</title>
+  <title>Use Case View</title>
+  <title>Component View</title>
+  <title>Deployment View</title>
+  <title>Entity Relationship Model</title>
+  <section id="actors">
+    <title>Actors</title>
+  </section>
+  <section id="usecases">
+    <title>Use Cases</title>
+  </section>
+  <section id="interfaces">
+    <title>Interfaces</title>
+    <section>
+      <title>MouseOver</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Interface</entry>
+              <entry role="class-name" namest="c2" nameend="c3">MouseOver</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>MouseDown</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Interface</entry>
+              <entry role="class-name" namest="c2" nameend="c3">MouseDown</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>MouseUp</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Interface</entry>
+              <entry role="class-name" namest="c2" nameend="c3">MouseUp</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>MouseScroll</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Interface</entry>
+              <entry role="class-name" namest="c2" nameend="c3">MouseScroll</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  </section>
+  <section id="classes">
+    <title>Classes</title>
+    <section>
+      <title>MouseEvent</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">MouseEvent</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>KeypressEvent</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">KeypressEvent</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>User</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">User</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>Form</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">Form</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>Article</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">Article</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>Video</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">Video</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>ImageGallery</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">ImageGallery</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>Page</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">Page</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>NavBar</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">NavBar</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>VersionBar</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">VersionBar</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>HUD</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">HUD</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>ViewPort</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">ViewPort</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>Logo</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">Logo</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>Link1</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">Link1</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>Link2</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">Link2</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>Link3</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">Link3</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>Link4</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">Link4</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>PageTitle</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">PageTitle</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>PageDescription</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">PageDescription</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>Ver2D</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">Ver2D</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>Ver2_5D</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">Ver2_5D</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>Ver3D</title>
+      <table frame="all">
+        <title/>
+        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+          <colspec colname="c1"/>
+          <colspec colname="c2"/>
+          <colspec colname="c3"/>
+          <thead>
+            <row>
+              <entry role="class-title">Class</entry>
+              <entry role="class-name" namest="c2" nameend="c3">Ver3D</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="c1" nameend="c3">
+                <para/>
+              </entry>
+            </row>
+            <section>
+              <title>Associations</title>
+              <para>visibility, type, properties.</para>
+              <para>public</para>
+              <para/>
+              <para>
+      Rolename: 
+    (none)</para>
+            </section>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  </section>
+  <section id="diagrams">
+    <title>Diagrams</title>
+    <!--diagrambegin1namebeginclass diagramnameend-->
+    <!--diagram1documentationbegindocumentationend-->
+    <section>
+      <title>class diagram</title>
+      <para/>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="class diagram.png"/>
+        </imageobject>
+      </mediaobject>
+    </section>
+    <section>
+      <title>Classes:</title>
+      <para/>
+    </section>
+    <!--diagramend1-->
+  </section>
+</article>
