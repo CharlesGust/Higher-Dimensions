@@ -1,9 +1,9 @@
-#include "Video.js"
-#include "Form.js"
-#include "Article.js"
-#include "ImageGallery.js"
-#include "HUD.js"
-#include "ViewPort.js"
+#include "linkVideo.js"
+#include "linkForm.js"
+#include "linkArticle.js"
+#include "linkImage.js"
+#include "hud.js"
+#include "view.js"
 #include "User.js"
 
 
