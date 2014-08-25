@@ -122,7 +122,7 @@ body {
 }
 
 /* Default styles first then media queries */
-@media screen and (min-width: 600px) and (max-width: 959px) {
+@media all and (min-width: 600px) and (max-width: 959px) {
 
   body{
     min-width: 600px;
@@ -188,7 +188,7 @@ body {
   }
 }
 
-@media screen and (min-width: 400px) and (max-width: 599px) {
+@media all and (max-width: 599px) {
 
   body {
     min-width: 400px;
