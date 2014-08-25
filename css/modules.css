@@ -25,7 +25,7 @@
 }
 
 body {
-  background-color: #3B998C;
+  background-color: #000;
 }
 
 .navigation {
@@ -122,4 +122,21 @@ body {
   font-weight: bold;
   padding: 10px;
   text-align: center;
+}
+
+/* Default styles first then media queries */
+@media screen and (min-width: 400px)  {
+
+}
+
+@media screen and (min-width: 600px)  {
+
+}
+
+@media screen and (min-width: 1000px) {
+
+}
+
+@media screen and (min-width: 1400px) {
+
 }
