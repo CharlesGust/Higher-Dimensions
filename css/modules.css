@@ -31,18 +31,17 @@ body {
 .navigation {
   background-color: #477670;
   border-radius: 0px 0px 25px 25px;
-  box-shadow: 5px 0px;
   font-family: 'akashiregular', sans-serif;
-  min-height: 22%;
   margin-bottom: 5%;
+  min-height: 22%;
 }
 
 .navigation__link {
   background-color: #2BCDB7;
   border-radius: 20px;
   box-shadow: 5px 0px;
-  margin-top: 50px;
   font-size: 2em;
+  margin-top: 50px;
   text-align: center;
 }
 
@@ -99,9 +98,8 @@ body {
 .content {
   background-color: #2BCDB7;
   border-radius: 25px 25px 25px 25px;
-  box-shadow: 5px 0px;
-  font-family: 'laconicregular', sans-serif;
   float: right;
+  font-family: 'laconicregular', sans-serif;
 }
 
 .content__text {
@@ -140,39 +138,38 @@ body {
     font-size: 1.5em;
     float: right;
     clear: none;
-    min-width: 25%;
     margin-right: 5%;
+    min-width: 25%;
   }
 
   .navigation__link--title {
     font-size: 2em;
-    margin-top: 3%;
     margin-left: 3%;
+    margin-top: 3%;
   }
 
   .sidebar {
-    min-width: 97.9166667%;
     margin-bottom: 5%;
+    min-width: 97.9166667%;
   }
 
   .sidebar__text {
-    border-right: 2px solid #000;
-    font-size: 1.4em;
     float: left;
+    font-size: 1.4em;
   }
 
   .sidebar__button {
+    float: left;
     font-size: 1.4em;
     margin: 10px 10px 10px 35px;
     width: 25%;
-    float: left;
   }
 
   .sidebar__button--active {
+    float: left;
     font-size: 1.4em;
     margin: 10px 10px 10px 35px;
     width: 25%;
-    float: left;
   }
 
   .content {
@@ -205,12 +202,12 @@ body {
 
   .navigation__link {
     box-shadow: none;
-    margin-top: 3%;
     font-size: 1.5em;
-    margin-left: 2%;
-    margin-right: 10%;
     float: right;
     clear: none;
+    margin-left: 2%;
+    margin-right: 10%;
+    margin-top: 3%;
     min-width: 31.25%;
   }
 
@@ -223,30 +220,29 @@ body {
   }
 
   .sidebar {
-    min-width: 97.9166667%;
     margin-bottom: 5%;
+    min-width: 97.9166667%;
   }
 
   .sidebar__text {
-    border-right: 2px solid #000;
-    font-size: 1.4em;
     float: left;
+    font-size: 1.4em;
   }
 
   .sidebar__button {
     box-shadow: none;
+    float: left;
     font-size: 1.4em;
     margin: 10px 10px 10px 35px;
     width: 20%;
-    float: left;
   }
 
   .sidebar__button--active {
     box-shadow: none;
+    float: left;
     font-size: 1.4em;
     margin: 10px 10px 10px 35px;
     width: 20%;
-    float: left;
   }
 
   .content {
