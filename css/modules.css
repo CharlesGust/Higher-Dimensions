@@ -188,7 +188,7 @@ body {
   }
 }
 
-@media screen and (min-width: 400px) and (max-width: 599px) {
+@media screen and (max-width: 599px) {
 
   body {
     min-width: 400px;
