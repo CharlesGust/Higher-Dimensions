@@ -43,8 +43,8 @@ body {
 .grid_12 {
   display: inline;
   float: left;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 1.0416667%; /* 10px / 960px */
+  margin-right: 1.0416667%; /* 10px / 960px */
 }
 
 .push_1, .pull_1,
@@ -76,239 +76,239 @@ body {
 ----------------------------------------------------------------------------------------------------*/
 
 .container_12 .grid_1 {
-  width: 60px;
+  width: 6.25%; /* 60px / 960px */
 }
 
 .container_12 .grid_2 {
-  width: 140px;
+  width: 14.5833333%; /* 140px / 960px */
 }
 
 .container_12 .grid_3 {
-  width: 220px;
+  width: 22.9166667%; /* 220px / 960px */
 }
 
 .container_12 .grid_4 {
-  width: 300px;
+  width: 31.25%; /* 300px / 960px */
 }
 
 .container_12 .grid_5 {
-  width: 380px;
+  width: 39.5833333%; /* 380px / 960px */
 }
 
 .container_12 .grid_6 {
-  width: 460px;
+  width: 47.9166667%; /* 460px / 960px */
 }
 
 .container_12 .grid_7 {
-  width: 540px;
+  width: 56.25%; /* 540px / 960px */
 }
 
 .container_12 .grid_8 {
-  width: 620px;
+  width: 64.5833333%; /* 620px / 960px */
 }
 
 .container_12 .grid_9 {
-  width: 700px;
+  width: 72.9166667%; /* 700px / 960px */
 }
 
 .container_12 .grid_10 {
-  width: 780px;
+  width: 81.25%; /* 780px / 960px */
 }
 
 .container_12 .grid_11 {
-  width: 860px;
+  width: 89.5833333%; /* 860px / 960px */
 }
 
 .container_12 .grid_12 {
-  width: 940px;
+  width: 97.9166667%; /* 940px / 960px */
 }
 
 /* `Prefix Extra Space >> 12 Columns
 ----------------------------------------------------------------------------------------------------*/
 
 .container_12 .prefix_1 {
-  padding-left: 80px;
+  padding-left: 8.3333333%; /* 80px / 960px */
 }
 
 .container_12 .prefix_2 {
-  padding-left: 160px;
+  padding-left: 16.6666667%; /* 160px / 960px */
 }
 
 .container_12 .prefix_3 {
-  padding-left: 240px;
+  padding-left: 25%; /* 240px / 960px */
 }
 
 .container_12 .prefix_4 {
-  padding-left: 320px;
+  padding-left: 33.3333333%; /* 320px / 960px */
 }
 
 .container_12 .prefix_5 {
-  padding-left: 400px;
+  padding-left: 41.6666667%; /* 400px / 960px */
 }
 
 .container_12 .prefix_6 {
-  padding-left: 480px;
+  padding-left: 50%; /* 480px / 960px */
 }
 
 .container_12 .prefix_7 {
-  padding-left: 560px;
+  padding-left: 58.3333333%; /* 560px / 960px */
 }
 
 .container_12 .prefix_8 {
-  padding-left: 640px;
+  padding-left: 66.6666667%; /* 640px / 960px */
 }
 
 .container_12 .prefix_9 {
-  padding-left: 720px;
+  padding-left: 75%; /* 720px / 960px */
 }
 
 .container_12 .prefix_10 {
-  padding-left: 800px;
+  padding-left: 83.3333333%; /* 800px / 960px */
 }
 
 .container_12 .prefix_11 {
-  padding-left: 880px;
+  padding-left: 91.6666667%; /* 880px / 960px */
 }
 
 /* `Suffix Extra Space >> 12 Columns
 ----------------------------------------------------------------------------------------------------*/
 
 .container_12 .suffix_1 {
-  padding-right: 80px;
+  padding-right: 8.3333333%; /* 80px / 960px */
 }
 
 .container_12 .suffix_2 {
-  padding-right: 160px;
+  padding-right: 16.6666667%; /* 160px / 960px */
 }
 
 .container_12 .suffix_3 {
-  padding-right: 240px;
+  padding-right: 25%; /* 240px / 960px */
 }
 
 .container_12 .suffix_4 {
-  padding-right: 320px;
+  padding-right: 33.3333333%; /* 320px / 960px */
 }
 
 .container_12 .suffix_5 {
-  padding-right: 400px;
+  padding-right: 41.6666667%; /* 400px / 960px */
 }
 
 .container_12 .suffix_6 {
-  padding-right: 480px;
+  padding-right: 50%; /* 480px / 960px */
 }
 
 .container_12 .suffix_7 {
-  padding-right: 560px;
+  padding-right: 58.3333333%; /* 560px / 960px */
 }
 
 .container_12 .suffix_8 {
-  padding-right: 640px;
+  padding-right: 66.6666667%; /* 640px / 960px */
 }
 
 .container_12 .suffix_9 {
-  padding-right: 720px;
+  padding-right: 75%; /* 720px / 960px */
 }
 
 .container_12 .suffix_10 {
-  padding-right: 800px;
+  padding-right: 83.3333333%; /* 800px / 960px */
 }
 
 .container_12 .suffix_11 {
-  padding-right: 880px;
+  padding-right: 91.6666667%; /* 880px / 960px */
 }
 
 /* `Push Space >> 12 Columns
 ----------------------------------------------------------------------------------------------------*/
 
 .container_12 .push_1 {
-  left: 80px;
+  left: 8.3333333%; /* 80px / 960px */
 }
 
 .container_12 .push_2 {
-  left: 160px;
+  left: 16.6666667%; /* 160px / 960px */
 }
 
 .container_12 .push_3 {
-  left: 240px;
+  left: 25%; /* 240px / 960px */
 }
 
 .container_12 .push_4 {
-  left: 320px;
+  left: 33.3333333%; /* 320px / 960px */
 }
 
 .container_12 .push_5 {
-  left: 400px;
+  left: 41.6666667%; /* 400px / 960px */
 }
 
 .container_12 .push_6 {
-  left: 480px;
+  left: 50%; /* 480px / 960px */
 }
 
 .container_12 .push_7 {
-  left: 560px;
+  left: 58.3333333%; /* 560px / 960px */
 }
 
 .container_12 .push_8 {
-  left: 640px;
+  left: 66.6666667%; /* 640px / 960px */
 }
 
 .container_12 .push_9 {
-  left: 720px;
+  left: 75%; /* 720px / 960px */
 }
 
 .container_12 .push_10 {
-  left: 800px;
+  left: 83.3333333%; /* 800px / 960px */
 }
 
 .container_12 .push_11 {
-  left: 880px;
+  left: 91.6666667%; /* 880px / 960px */
 }
 
 /* `Pull Space >> 12 Columns
 ----------------------------------------------------------------------------------------------------*/
 
 .container_12 .pull_1 {
-  left: -80px;
+  left: -8.3333333%; /* 80px / 960px */
 }
 
 .container_12 .pull_2 {
-  left: -160px;
+  left: -16.6666667%; /* 160px / 960px */
 }
 
 .container_12 .pull_3 {
-  left: -240px;
+  left: -25%; /* 240px / 960px */
 }
 
 .container_12 .pull_4 {
-  left: -320px;
+  left: -33.3333333%; /* 320px / 960px */
 }
 
 .container_12 .pull_5 {
-  left: -400px;
+  left: -41.6666667%; /* 400px / 960px */
 }
 
 .container_12 .pull_6 {
-  left: -480px;
+  left: -50%; /* 480px / 960px */
 }
 
 .container_12 .pull_7 {
-  left: -560px;
+  left: -58.3333333%; /* 560px / 960px */
 }
 
 .container_12 .pull_8 {
-  left: -640px;
+  left: -66.6666667%; /* 640px / 960px */
 }
 
 .container_12 .pull_9 {
-  left: -720px;
+  left: -75%; /* 720px / 960px */
 }
 
 .container_12 .pull_10 {
-  left: -800px;
+  left: -83.3333333%; /* 800px / 960px */
 }
 
 .container_12 .pull_11 {
-  left: -880px;
+  left: -91.6666667%; /* 880px / 960px */
 }
 
 /* `Clear Floated Elements
