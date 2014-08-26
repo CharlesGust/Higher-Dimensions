@@ -100,6 +100,7 @@ body {
   border-radius: 25px 25px 25px 25px;
   float: right;
   font-family: 'laconicregular', sans-serif;
+  margin-bottom: 5%;
 }
 
 .content__text {
@@ -117,6 +118,10 @@ body {
   font-weight: bold;
   padding: 10px;
   text-align: center;
+}
+
+.content__image {
+
 }
 
 /* Default styles first then media queries */
