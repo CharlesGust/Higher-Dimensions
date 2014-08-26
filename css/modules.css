@@ -120,6 +120,10 @@ body {
   text-align: center;
 }
 
+.content__image {
+
+}
+
 /* Default styles first then media queries */
 @media all and (min-width: 600px) and (max-width: 959px) {
 
