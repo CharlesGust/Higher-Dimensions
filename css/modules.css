@@ -121,7 +121,7 @@ body {
 }
 
 .content__image {
-
+  margin: 2%;
 }
 
 /* Default styles first then media queries */
@@ -187,6 +187,10 @@ body {
 
   .content__text--title {
     font-size: 2em;
+  }
+
+  .content__image {
+    min-width: 50%;
   }
 }
 
@@ -260,5 +264,9 @@ body {
 
   .content__text--title {
     font-size: 2em;
+  }
+
+  .content__image {
+    min-width: 89.5833333%;
   }
 }
