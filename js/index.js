@@ -34,7 +34,7 @@ function User() {
   $navBarLI.on("mouseleave", function(ev) {
     // the first child of the <li> is a <div>
     var $t = $(this.firstChild);
-    $t.css("background", "#fff");
+    $t.css("background", "#2BCDB7");
     $t.world("page", {});
   });
 
