@@ -44,11 +44,17 @@ function User() {
 
 function ViewControl () {
 
+  var $cam = $("#view_container");
   var $header = $('.navigation');
   var $links = $('.navigation .navigation__link');
   var $aside = $('.sidebar');
   var $buttons = $('.sidebar div');
+  var $content = $('main');
+
   var currentActive = '#base';
+  var baseText = 'This webpage is currently being displayed in regular HTML. Select an option below to see what is possible with the Third Dimension.';
+  var twoFiveText = 'This webpage is currently being displayed in 2.5-D HTML. It retains the general look of a regular website, but the possibilities have expanded.';
+  var threeDText = 'This webpage is currently being displayed in 3-D HTML. There is now a whole new dimension of possibilities.';
 
   $('#base').on('click', initializeBase);
   $('#2-5').on('click', initializeTwoFive);
@@ -68,10 +74,18 @@ function ViewControl () {
 
   function initializeBase () {
 
-    $header.world('page', 'clearAll');
-    $links.world('page', 'clearAll');
-    $aside.world('page', 'clearAll');
-    $buttons.world('page', 'clearAll');
+    if(currentActive === '#3-D') {
+      $cam.world('set', 'clearAll');
+
+    }
+    else{
+      $header.world('page', 'clearAll');
+      $links.world('page', 'clearAll');
+      $aside.world('page', 'clearAll');
+      $buttons.world('page', 'clearAll');
+    }
+
+    $('.sidebar__text').text(baseText);
 
     changeActiveButton('#base');
   }
@@ -84,12 +98,34 @@ function ViewControl () {
     $aside.world('page', {transition:".5s ease-in-out", z: -5, rotateY: 5});
     $buttons.world('page', {transition:".5s ease-in-out", z: 5, rotateY: -5});
 
+    $('.sidebar__text').text(twoFiveText);
+
     changeActiveButton('#2-5');
   }
 
   function initializeThreeD () {
 
+    $cam.world({fov:70, x:0,y:0,z:-400});
+    $cam.height(680);
 
+    $cam.world('addElements', $header);
+    $header
+      .world('set', {x:-168,y:205,z:20})
+      .width(960 * 0.979166667);
+
+    $cam.world('addElements', $aside);
+    $aside
+      .css({'top':-205, 'left':-450})
+      .width(960 * 0.145833333);
+
+    $cam.world('addElements', $content);
+    $content
+      .css({'top':-375, 'left':-280})
+      .width(960 * 0.75);
+
+    $('.sidebar__text').text(threeDText);
+
+    changeActiveButton('#3-D');
   }
 }
 //End ViewControl
@@ -107,5 +143,5 @@ $(document).ready(function() {
 
   var viewC = new ViewControl ();
 
-  var user = new User();
+  //var user = new User();
 });
