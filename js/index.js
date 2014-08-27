@@ -1,19 +1,3 @@
-var view;
-/*
-var lastMouseX = 0;
-var lastMouseY = 0;
-
-function mouseMoved(x, y) {
-  if ((lastMouseY == y) && (lastMouseX ==x)) {
-    return false;
-  } else {
-    lastMouseX = x;
-    lastMouseY = y;
-    return true;
-  }
-}
-*/
-
 function User() {
   // this class is for all the user interaction we might have.
   var $navBarLI = $(".navigation li");
