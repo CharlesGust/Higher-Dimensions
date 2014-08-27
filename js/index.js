@@ -1,27 +1,29 @@
-var view;
-var lastMouseX = 0;
-var lastMouseY = 0;
-
-function mouseMoved(x, y) {
-  if ((lastMouseY == y) && (lastMouseX ==x)) {
-    return false;
-  } else {
-    lastMouseX = x;
-    lastMouseY = y;
-    return true;
-  }
-}
-
 function User() {
   // this class is for all the user interaction we might have.
   var $navBarLI = $(".navigation li");
-  var list = $(".navigation li");
-  var $navLinks = $(".navigation__link");
-  var $navTitle = $(".navigation__link--title");
+
+  // jWorld doesn't manipulate <a> objects, so we have to insert the <a>
+  // into an element which can move, like <div> or <span>.
+  $navBarLI.each(function() {
+    var $firstChild = $(this.firstChild);
+
+    // wrap the <a> in a <div>. The wrap function returns the initial element
+    // not what you get after the wrap.
+    $firstChild = $firstChild.wrap("<div></div>");
+
+    // remove the navigation__link class from the <li>
+    $(this).removeClass("navigation__link");
+
+    // add navigation__link class to <div>
+    var $divWClassAttr = $firstChild.parent().addClass("navigation__link");
+
+    // change style of <div> to inline-block
+    $divWClassAttr.attr("display", "block");
+  });
 
   $navBarLI.on("mouseenter", function(ev) {
-    if (!mouseMoved(ev.clientX, ev.clientY)) return;
-    var $t = $(this);
+    // the first child of the <li> is a <div>
+    var $t = $(this.firstChild);
     $t.css("background", "#dfa");
     $t.world("page", {transition: "none", rotateY: -178});
     setTimeout(function() {
@@ -30,9 +32,9 @@ function User() {
   });
 
   $navBarLI.on("mouseleave", function(ev) {
-    if (!mouseMoved(ev.clientX, ev.clientY)) return;
+    // the first child of the <li> is a <div>
     var $t = $(this.firstChild);
-    $(this).css("background", "#fff");
+    $t.css("background", "#2BCDB7");
     $t.world("page", {});
   });
 

@@ -147,6 +147,14 @@ body {
     min-width: 25%;
   }
 
+  .navigation__link div {
+    font-size: 1.5em;
+    float: right;
+    clear: none;
+    margin-right: 5%;
+    min-width: 25%;
+  }
+
   .navigation__link--title {
     font-size: 2em;
     margin-left: 3%;
