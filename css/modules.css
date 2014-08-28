@@ -83,6 +83,7 @@ body {
 
 .sidebar__button {
   background-color: #2BCDB7;
+  border: none;
   border-radius: 20px;
   box-shadow: 5px 0px;
   font-size: 1.2em;
@@ -94,6 +95,7 @@ body {
 
 .sidebar__button--active {
   background-color: #11FEDD;
+  border: none;
   border-radius: 20px;
   box-shadow: 5px 0px;
   font-size: 1.2em;
