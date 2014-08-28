@@ -2,3 +2,40 @@ header a{
   color: #000;
   text-decoration: none;
 }
+
+.navigation__link--2D {
+    background-color: #dfa;
+  }
+
+.navigation__link--2_5D {
+  -webkit-animation-timing-function:  ease-out;
+  -moz-animation-timing-function:     ease-out;
+  animation-timing-function:          ease-out;
+
+  -webkit-animation:  navigation__link--3Danimation 1.0s;
+  -moz-animation:     navigation__link--3Danimation 1.0s;
+  animation:          navigation__link--3Danimation 1.0s;
+}
+
+/*
+  0%    {transform: rotateY(0deg)   translateZ(0);   }
+  50%   {transform: rotateY(178deg) translateZ(0);   }
+  100%  {transform: rotateY(-10deg) translateZ(40);  }
+  */
+@-webkit-keyframes  navigation__link--3Danimation {
+  0%    {transform: rotateY(0deg)      }
+  50%   {transform: rotateY(178deg)    }
+  100%  {transform: rotateY(-10deg)    }
+}
+
+@-moz-keyframes     navigation__link--3Danimation {
+  0%    {transform: rotateY(0deg)      }
+  50%   {transform: rotateY(178deg)    }
+  100%  {transform: rotateY(-10deg)    }
+}
+
+@keyframes          navigation__link--3Danimation {
+  0%    {transform: rotateY(0deg)      }
+  50%   {transform: rotateY(178deg)    }
+  100%  {transform: rotateY(-10deg)    }
+}

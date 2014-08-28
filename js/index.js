@@ -3,26 +3,54 @@ var mode;
 function User() {
   // jWorld doesn't manipulate <a> objects, so we have to insert the <a>
   // into an element which can move, like <div> or <span>.
+  /*
   function insertDiv(t, dispClass) {
     var $firstChild = $(t.firstChild);
 
     // wrap the <a> in a <div>. The wrap function returns the initial element
-    // not what you get after the wrap.
-    $firstChild = $firstChild.wrap("<div></div>");
+    // not what you get after the wrap, so get its parent to get to the <div>
+    //var $divWPosition = $firstChild.wrap("<div></div>").parent();
+
+    //$divWPosition.addClass(dispClass);
+    //$(t).removeClass(dispClass);
+
+    // move any positional css from the child to the parent <div>
+    //var newposition = $(t).css("position");
+
+    if ($(t).css("position")) {
+      $divWPosition.css("position", $(t).css("position"));
+      $(t).removeAttr("position");
+    }
+    if ($(t).css("top")) {
+      $divWPosition.css("top", $(t).css("top"));
+      $(t).removeAttr("top");
+    }
+
 
     // remove the navigation__link class from the <li>
-    $(t).removeClass(dispClass);
+    //$(t).removeClass(dispClass);
 
     // add navigation__link class to <div>
-    var $divWClassAttr = $firstChild.parent().addClass(dispClass);
-
+    //var $divWClassAttr = $firstChild.parent().addClass(dispClass);
+    //$divWClassAttr.attr("top", "0");
+    //$(t).attr("top", 50);
     // change style of <div> to inline-block
     //$divWClassAttr.attr("display", "inline-block");
   }
+  */
 
   function spinDiv(th) {
     // the first child of the <li> is a <div>
-    var $t = $(th.firstChild);
+    var el = th.firstChild;
+
+    while (el.nodeType!=1) {
+      el = el.nextSibling;
+    }
+
+    var $t = $(el);
+    if (mode >= 2)    $t.addClass("navigation__link--2D");
+    if (mode >= 2.5)  $t.addClass("navigation__link--2_5D");
+    /*
     $t.css("background-color", "#dfa");
     if (mode >= 2.5) {
       $t.world("page", {transition: "none", rotateY: -178});
@@ -30,11 +58,21 @@ function User() {
         $t.world("page", {transition: ".45s ease-out", rotateY: -10, z:40});
       }, 5);
     }
+    */
   }
 
   function clearDiv(th) {
     // the first child of the <li> is a <div>
-    var $t = $(th.firstChild);
+    var el = th.firstChild;
+
+    while (el.nodeType!=1) {
+      el = el.nextSibling;
+    }
+
+    var $t = $(el);
+    $t.removeClass("navigation__link--2D");
+    $t.removeClass("navigation__link--2_5D");
+    /*
     if ($t.hasClass('sidebar__button--active')) {
       $t.css("background-color", "#11FEDD");
     }
@@ -44,29 +82,33 @@ function User() {
     if (mode >= 2.5) {
       $t.world("page", {});
     }
+    */
   }
 
   // this class is for all the user interaction we might have.
-  var $navBarLI = $(".navigation li");
+  var $navBarTopDiv = $("nav>div");
   var $sideBarButton = $('.sidebar button');
 
+/*
   // set up navBar effects
   $navBarLI.each(function() {
     insertDiv(this, "navigation__link");
   });
+*/
 
-  $navBarLI.on("mouseenter click", function(ev) {
+  $navBarTopDiv.on("mouseenter click", function(ev) {
     spinDiv(this);
   });
 
-  $navBarLI.on("mouseleave", function(ev) {
+  $navBarTopDiv.on("mouseleave", function(ev) {
     clearDiv(this);
   });
-
+/*
   // set up sideBar effects
   $sideBarButton.each(function() {
     insertDiv(this, "");
   });
+*/
 
 
   $sideBarButton.on("mouseenter click", function(ev) {
@@ -100,6 +142,7 @@ function ViewControl () {
   $('#base').on('click', initializeBase);
   $('#2-5').on('click', initializeTwoFive);
   $('#3-D').on('click', initializeThreeD);
+  mode =2;
 
   //Function used in the process to change between modes
   function changeActiveButton (button) {
@@ -118,6 +161,7 @@ function ViewControl () {
   function initializeBase () {
     mode = 2;
 
+/*
     if(currentActive === '#3-D') {
       $cam.world('set', 'clearAll');
 
@@ -128,6 +172,7 @@ function ViewControl () {
       $aside.world('page', 'clearAll');
       $buttons.world('page', 'clearAll');
     }
+    */
 
     $('.sidebar__text').text(baseText);
 
@@ -137,12 +182,15 @@ function ViewControl () {
   function initializeTwoFive () {
     mode =2.5;
 
+/*
     $header.world('page', {transition:".5s ease-in-out", z: -5});
     $links.world('page', {transition:".5s ease-in-out", z: 5});
 
     $aside.world('page', {transition:".5s ease-in-out", z: -5});
     $buttons.world('page', {transition:".5s ease-in-out", z: 5});
 
+
+*/
     $('.sidebar__text').text(twoFiveText);
 
     changeActiveButton('#2-5');

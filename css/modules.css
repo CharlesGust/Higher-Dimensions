@@ -48,7 +48,9 @@ body {
   box-shadow: 5px 0px;
   font-size: 2em;
   text-align: center;
-  list-style: none;
+}
+
+.navigation__link__position {
   position: relative;
   top: 50px;
 }
