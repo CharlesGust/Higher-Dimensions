@@ -136,6 +136,12 @@ body {
   margin: 2%;
 }
 
+.view__image {
+  height: 400px;
+  width: 400px;
+  display: none;
+}
+
 /* Default styles first then media queries */
 @media all and (min-width: 600px) and (max-width: 959px) {
 
