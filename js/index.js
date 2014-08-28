@@ -23,7 +23,7 @@ function User() {
   function spinDiv(th) {
     // the first child of the <li> is a <div>
     var $t = $(th.firstChild);
-    $t.css("background", "#dfa");
+    $t.css("background-color", "#dfa");
     if (mode >= 2.5) {
       $t.world("page", {transition: "none", rotateY: -178});
       setTimeout(function() {
@@ -35,7 +35,12 @@ function User() {
   function clearDiv(th) {
     // the first child of the <li> is a <div>
     var $t = $(th.firstChild);
-    $t.css("background", "#2BCDB7");
+    if ($t.hasClass('sidebar__button--active')) {
+      $t.css("background-color", "#11FEDD");
+    }
+    else {
+      $t.css("background-color", "#2BCDB7");
+    }
     if (mode >= 2.5) {
       $t.world("page", {});
     }
@@ -74,15 +79,18 @@ function User() {
 }
 //End User
 
-
+//This controls the transitions between the different
+//modes using the buttons in the sidebar
 function ViewControl () {
 
+  //variables to hold the necessary elements for
+  //transition to different modes
   var $cam = $("#view_container");
   var $header = $('.navigation');
   var $links = $('.navigation .navigation__link');
   var $aside = $('.sidebar');
   var $buttons = $('.sidebar div');
-  var $content = $('main');
+  var $content = $('.content');
 
   var currentActive = '#base';
   var baseText = 'This webpage is currently being displayed in regular HTML. Select an option below to see what is possible with the Third Dimension.';
@@ -93,6 +101,7 @@ function ViewControl () {
   $('#2-5').on('click', initializeTwoFive);
   $('#3-D').on('click', initializeThreeD);
 
+  //Function used in the process to change between modes
   function changeActiveButton (button) {
 
     $(button)
@@ -105,6 +114,7 @@ function ViewControl () {
     currentActive = button;
   }
 
+  //
   function initializeBase () {
     mode = 2;
 
@@ -127,11 +137,11 @@ function ViewControl () {
   function initializeTwoFive () {
     mode =2.5;
 
-    $header.world('page', {transition:".5s ease-in-out", z: -5, rotateX: -5});
-    $links.world('page', {transition:".5s ease-in-out", z: 5, rotateX: 5});
+    $header.world('page', {transition:".5s ease-in-out", z: -5});
+    $links.world('page', {transition:".5s ease-in-out", z: 5});
 
-    $aside.world('page', {transition:".5s ease-in-out", z: -5, rotateY: 5});
-    $buttons.world('page', {transition:".5s ease-in-out", z: 5, rotateY: -5});
+    $aside.world('page', {transition:".5s ease-in-out", z: -5});
+    $buttons.world('page', {transition:".5s ease-in-out", z: 5});
 
     $('.sidebar__text').text(twoFiveText);
 
