@@ -28,12 +28,18 @@ body {
   background-color: #000;
 }
 
+/*
+ * http://webdesignerwall.com/tutorials/css-responsive-navigation-menu
+ * was a helpful resource, particularly for position: relative,
+ * and list-style-none used on .navigation*
+ */
 .navigation {
   background-color: #477670;
   border-radius: 0px 0px 25px 25px;
   font-family: 'akashiregular', sans-serif;
   margin-bottom: 5%;
-  min-height: 22%;
+  min-height: 135px; /*22%*/
+  position: relative;
 }
 
 .navigation__link {
@@ -41,8 +47,10 @@ body {
   border-radius: 20px;
   box-shadow: 5px 0px;
   font-size: 2em;
-  margin-top: 50px;
   text-align: center;
+  list-style: none;
+  position: relative;
+  top: 50px;
 }
 
 .navigation__link--title {

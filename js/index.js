@@ -1,43 +1,76 @@
-function User() {
-  // this class is for all the user interaction we might have.
-  var $navBarLI = $(".navigation li");
+var mode;
 
+function User() {
   // jWorld doesn't manipulate <a> objects, so we have to insert the <a>
   // into an element which can move, like <div> or <span>.
-  $navBarLI.each(function() {
-    var $firstChild = $(this.firstChild);
+  function insertDiv(t, dispClass) {
+    var $firstChild = $(t.firstChild);
 
     // wrap the <a> in a <div>. The wrap function returns the initial element
     // not what you get after the wrap.
     $firstChild = $firstChild.wrap("<div></div>");
 
     // remove the navigation__link class from the <li>
-    $(this).removeClass("navigation__link");
+    $(t).removeClass(dispClass);
 
     // add navigation__link class to <div>
-    var $divWClassAttr = $firstChild.parent().addClass("navigation__link");
+    var $divWClassAttr = $firstChild.parent().addClass(dispClass);
 
     // change style of <div> to inline-block
-    $divWClassAttr.attr("display", "block");
+    //$divWClassAttr.attr("display", "inline-block");
+  }
+
+  function spinDiv(th) {
+    // the first child of the <li> is a <div>
+    var $t = $(th.firstChild);
+    $t.css("background", "#dfa");
+    if (mode >= 2.5) {
+      $t.world("page", {transition: "none", rotateY: -178});
+      setTimeout(function() {
+        $t.world("page", {transition: ".45s ease-out", rotateY: -10, z:40});
+      }, 5);
+    }
+  }
+
+  function clearDiv(th) {
+    // the first child of the <li> is a <div>
+    var $t = $(th.firstChild);
+    $t.css("background", "#2BCDB7");
+    if (mode >= 2.5) {
+      $t.world("page", {});
+    }
+  }
+
+  // this class is for all the user interaction we might have.
+  var $navBarLI = $(".navigation li");
+  var $sideBarButton = $('.sidebar button');
+
+  // set up navBar effects
+  $navBarLI.each(function() {
+    insertDiv(this, "navigation__link");
   });
 
-  $navBarLI.on("mouseenter", function(ev) {
-    // the first child of the <li> is a <div>
-    var $t = $(this.firstChild);
-    $t.css("background", "#dfa");
-    $t.world("page", {transition: "none", rotateY: -178});
-    setTimeout(function() {
-      $t.world("page", {transition: ".45s ease-out", rotateY: -10, z:40});
-    }, 5);
+  $navBarLI.on("mouseenter click", function(ev) {
+    spinDiv(this);
   });
 
   $navBarLI.on("mouseleave", function(ev) {
-    // the first child of the <li> is a <div>
-    var $t = $(this.firstChild);
-    $t.css("background", "#2BCDB7");
-    $t.world("page", {});
+    clearDiv(this);
   });
 
+  // set up sideBar effects
+  $sideBarButton.each(function() {
+    insertDiv(this, "");
+  });
+
+
+  $sideBarButton.on("mouseenter click", function(ev) {
+    spinDiv(this);
+  });
+
+  $sideBarButton.on("mouseleave", function(ev) {
+    clearDiv(this);
+  });
 }
 //End User
 
@@ -73,6 +106,7 @@ function ViewControl () {
   }
 
   function initializeBase () {
+    mode = 2;
 
     if(currentActive === '#3-D') {
       $cam.world('set', 'clearAll');
@@ -91,6 +125,7 @@ function ViewControl () {
   }
 
   function initializeTwoFive () {
+    mode =2.5;
 
     $header.world('page', {transition:".5s ease-in-out", z: -5, rotateX: -5});
     $links.world('page', {transition:".5s ease-in-out", z: 5, rotateX: 5});
@@ -104,6 +139,7 @@ function ViewControl () {
   }
 
   function initializeThreeD () {
+    mode = 3;
 
     $cam.world({fov:70, x:0,y:0,z:-400});
     $cam.height(680);
@@ -143,5 +179,5 @@ $(document).ready(function() {
 
   var viewC = new ViewControl ();
 
-  //var user = new User();
+  var user = new User();
 });
