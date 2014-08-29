@@ -1,123 +1,34 @@
 var mode = 2;
 
 function User() {
-  // jWorld doesn't manipulate <a> objects, so we have to insert the <a>
-  // into an element which can move, like <div> or <span>.
-  /*
-  function insertDiv(t, dispClass) {
-    var $firstChild = $(t.firstChild);
-
-    // wrap the <a> in a <div>. The wrap function returns the initial element
-    // not what you get after the wrap, so get its parent to get to the <div>
-    //var $divWPosition = $firstChild.wrap("<div></div>").parent();
-
-    //$divWPosition.addClass(dispClass);
-    //$(t).removeClass(dispClass);
-
-    // move any positional css from the child to the parent <div>
-    //var newposition = $(t).css("position");
-
-    if ($(t).css("position")) {
-      $divWPosition.css("position", $(t).css("position"));
-      $(t).removeAttr("position");
-    }
-    if ($(t).css("top")) {
-      $divWPosition.css("top", $(t).css("top"));
-      $(t).removeAttr("top");
-    }
-
-
-    // remove the navigation__link class from the <li>
-    //$(t).removeClass(dispClass);
-
-    // add navigation__link class to <div>
-    //var $divWClassAttr = $firstChild.parent().addClass(dispClass);
-    //$divWClassAttr.attr("top", "0");
-    //$(t).attr("top", 50);
-    // change style of <div> to inline-block
-    //$divWClassAttr.attr("display", "inline-block");
-  }
-  */
 
   function spinDiv(th) {
-    // the first child of the <li> is a <div>
-    var el = th.firstChild;
-
-    while (el.nodeType!=1) {
-      el = el.nextSibling;
-    }
-
-    var $t = $(el);
+    var $t = $(th).children();
     if (mode >= 2)    $t.addClass("navigation__link--2D");
     if (mode >= 2.5)  $t.addClass("navigation__link--2_5D");
-    /*
-    $t.css("background-color", "#dfa");
-    if (mode >= 2.5) {
-      $t.world("page", {transition: "none", rotateY: -178});
-      setTimeout(function() {
-        $t.world("page", {transition: ".45s ease-out", rotateY: -10, z:40});
-      }, 5);
-    }
-    */
   }
 
   function clearDiv(th) {
-    // the first child of the <li> is a <div>
-    var el = th.firstChild;
-
-    while (el.nodeType!=1) {
-      el = el.nextSibling;
-    }
-
-    var $t = $(el);
+    var $t = $(th).children();
     $t.removeClass("navigation__link--2D");
     $t.removeClass("navigation__link--2_5D");
-    /*
-    if ($t.hasClass('sidebar__button--active')) {
-      $t.css("background-color", "#11FEDD");
-    }
-    else {
-      $t.css("background-color", "#2BCDB7");
-    }
-    if (mode >= 2.5) {
-      $t.world("page", {});
-    }
-    */
+  }
+
+  function makeMouseEvents(elements) {
+    var $jLoc = $(elements);
+
+    $jLoc.on("mouseenter click", function(ev) {
+      spinDiv(this);
+    });
+
+    $jLoc.on("mouseleave", function(ev) {
+      clearDiv(this);
+    });
   }
 
   // this class is for all the user interaction we might have.
-  var $navBarTopDiv = $("nav>div");
-  var $sideBarButton = $('.sidebar button');
-
-/*
-  // set up navBar effects
-  $navBarLI.each(function() {
-    insertDiv(this, "navigation__link");
-  });
-*/
-
-  $navBarTopDiv.on("mouseenter click", function(ev) {
-    spinDiv(this);
-  });
-
-  $navBarTopDiv.on("mouseleave", function(ev) {
-    clearDiv(this);
-  });
-/*
-  // set up sideBar effects
-  $sideBarButton.each(function() {
-    insertDiv(this, "");
-  });
-*/
-
-
-  $sideBarButton.on("mouseenter click", function(ev) {
-    spinDiv(this);
-  });
-
-  $sideBarButton.on("mouseleave", function(ev) {
-    clearDiv(this);
-  });
+  makeMouseEvents("nav>div");
+  makeMouseEvents(".sidebar button");
 }
 //End User
 
@@ -176,24 +87,6 @@ function ViewControl () {
   function initializeBase () {
 
     location.reload();
-    /*mode = 2;
-
-
-    if(currentActive === '#3-D') {
-      $cam.world('set', 'clearAll');
-
-    }
-    else{
-      $header.world('page', 'clearAll');
-      $links.world('page', 'clearAll');
-      $aside.world('page', 'clearAll');
-      $buttons.world('page', 'clearAll');
-    }
-
-
-    $('.sidebar__text').text(baseText);
-
-    changeActiveButton('#base');*/
   }
   //End initializeBase
 
@@ -344,7 +237,38 @@ function ViewControl () {
 }
 //End ViewControl
 
+/*
+**  page.saveData and page.loadData based on versions provided by Rick Strahl
+**  at weblog.west-wind.com
+*/
+saveData = function(id) {
+  if (!sessionStorage) {
+    return null;
+  }
 
+  var data = {
+    id: id,
+    html: $("#view_container").html()
+    };
+    sessionStorage.setItem("index_html", JSON.stringify(data));
+  };
+
+
+loadData = function() {
+  // is sessionStorage API supported?
+  if (!sessionStorage) {
+    return null;
+  }
+
+  var data = sessionStorage.getItem("index_html");
+
+  // was any storage for this page found?
+  if (!data) {
+    return null;
+  } else {
+    return JSON.parse(data);
+  }
+};
 
 
 
@@ -358,7 +282,8 @@ $(document).ready(function() {
   // being, but it may be that we have to get this from SessionStorage
   // because we might be in 2D, 2.5D or 3D
 
-  var viewC = new ViewControl ();
-
-  var user = new User();
+  if (! loadData()) {
+    var viewC = new ViewControl ();
+    var user = new User();
+  }
 });
