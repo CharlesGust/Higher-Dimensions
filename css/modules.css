@@ -147,11 +147,17 @@ body {
 
   .navigation__link {
     font-size: 1.5em;
+    margin-right: 5%;
+    min-width: 25%;
+  }
+
+  .navigation__link__position {
     float: right;
     clear: none;
     margin-right: 5%;
     margin-top: 5%;
     min-width: 25%;
+    top: 20px;
   }
 
   .navigation__link div {
@@ -179,10 +185,10 @@ body {
   }
 
   .sidebar__button {
-    float: left;
+    float: none;
     font-size: 1.4em;
-    margin: 10px 10px 10px 35px;
-    width: 25%;
+    margin: 10px 10px 10px 25%;
+    width: 50%;
   }
 
   .content {
@@ -214,19 +220,23 @@ body {
 
   .navigation {
     box-shadow: none;
-    min-height: 27%;
+    min-height: 30%;
   }
 
   .navigation__link {
     box-shadow: none;
     font-size: 1.5em;
+
+  }
+
+  .navigation__link__position {
     float: right;
     clear: none;
     margin-left: 2%;
     margin-right: 10%;
-    margin-top: 10%;
-    margin-top: 3%;
-    min-width: 31.25%;
+    margin-top: 5%;
+    min-width: 30%;
+    top: -10px;
   }
 
   .navigation__link--title {
@@ -249,10 +259,10 @@ body {
 
   .sidebar__button {
     box-shadow: none;
-    float: left;
+    float: none;
     font-size: 1.4em;
-    margin: 10px 10px 10px 35px;
-    width: 20%;
+    margin: 10px 10px 10px 25%;
+    width: 50%;
   }
 
   .content {
