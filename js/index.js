@@ -166,12 +166,17 @@ function ViewControl () {
     else if (mode == 2.5) {
       initializeThreeD();
     }
+    else if (mode == 3) {
+      initializeBase();
+    }
 
   }
   //End modeChange function
 
-  /*function initializeBase () {
-    mode = 2;
+  function initializeBase () {
+
+    location.reload();
+    /*mode = 2;
 
 
     if(currentActive === '#3-D') {
@@ -188,8 +193,8 @@ function ViewControl () {
 
     $('.sidebar__text').text(baseText);
 
-    changeActiveButton('#base');
-  }*/
+    changeActiveButton('#base');*/
+  }
   //End initializeBase
 
   function initializeTwoFive () {
@@ -254,6 +259,8 @@ function ViewControl () {
     $('.sidebar__text').text(threeDText);
 
     freeLook();
+
+    $('.sidebar__button').text('Back to Flat');
 
     /*changeActiveButton('#3-D');*/
   }
