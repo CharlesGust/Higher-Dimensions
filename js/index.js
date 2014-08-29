@@ -1,34 +1,76 @@
 var mode = 2;
 
-function User() {
+/*
+**  page.saveData and page.loadData based on versions provided by Rick Strahl
+**  at weblog.west-wind.com
+*/
+saveData = function(id) {
+  if (!sessionStorage) {
+    return null;
+  }
 
-  function spinDiv(th) {
+  var data = {
+    id:           id,
+    mode:         mode,
+    position:     window.position,
+    persist:      $("#persist").html()
+    };
+    sessionStorage.setItem("index_html", JSON.stringify(data));
+  };
+
+
+loadData = function() {
+  // is sessionStorage API supported?
+  if (!sessionStorage) {
+    return null;
+  }
+
+  var data = sessionStorage.getItem("index_html");
+
+  // was any storage for this page found?
+  if (!data) {
+    return null;
+  } else {
+    return JSON.parse(data);
+  }
+};
+
+restoreData = function(data) {
+  mode = data.mode;
+  window.position = data.position;
+  $("#persist").html(data.persist);
+}
+
+
+function buttonInterface() {
+
+  function performButtonEffect(th) {
     var $t = $(th).children();
     if (mode >= 2)    $t.addClass("navigation__link--2D");
     if (mode >= 2.5)  $t.addClass("navigation__link--2_5D");
   }
 
-  function clearDiv(th) {
+  function removeButtonEffect(th) {
     var $t = $(th).children();
     $t.removeClass("navigation__link--2D");
     $t.removeClass("navigation__link--2_5D");
   }
 
-  function makeMouseEvents(elements) {
+  function createButtonListeners(elements) {
     var $jLoc = $(elements);
 
     $jLoc.on("mouseenter click", function(ev) {
-      spinDiv(this);
+      performButtonEffect(this);
     });
 
     $jLoc.on("mouseleave", function(ev) {
-      clearDiv(this);
+      removeButtonEffect(this);
     });
   }
 
   // this class is for all the user interaction we might have.
-  makeMouseEvents("nav>div");
-  makeMouseEvents(".sidebar button");
+  createButtonListeners("nav>div");
+  createButtonListeners(".sidebar button");
 }
 //End User
 
@@ -68,19 +110,29 @@ function ViewControl () {
   }
   //End changeActiveButton
 
+  function modeSet(n) {
+    if (n == 2) {
+      initializeBase();
+    } else if (n == 2.5) {
+      initializeTwoFive();
+    } else if (n == 3) {
+      initializeThreeD();
+    }
+    mode = n;
+  }
 
   function modeChange () {
 
     if (mode == 2) {
-      initializeTwoFive();
+      modeSet(2.5);
     }
     else if (mode == 2.5) {
-      initializeThreeD();
+      modeSet(3);
     }
     else if (mode == 3) {
-      initializeBase();
+      modeSet(2);
     }
-
+    saveData(1);
   }
   //End modeChange function
 
@@ -248,39 +300,6 @@ function ViewControl () {
 }
 //End ViewControl
 
-/*
-**  page.saveData and page.loadData based on versions provided by Rick Strahl
-**  at weblog.west-wind.com
-*/
-saveData = function(id) {
-  if (!sessionStorage) {
-    return null;
-  }
-
-  var data = {
-    id: id,
-    html: $("#view_container").html()
-    };
-    sessionStorage.setItem("index_html", JSON.stringify(data));
-  };
-
-
-loadData = function() {
-  // is sessionStorage API supported?
-  if (!sessionStorage) {
-    return null;
-  }
-
-  var data = sessionStorage.getItem("index_html");
-
-  // was any storage for this page found?
-  if (!data) {
-    return null;
-  } else {
-    return JSON.parse(data);
-  }
-};
-
 
 
 //
@@ -293,8 +312,11 @@ $(document).ready(function() {
   // being, but it may be that we have to get this from SessionStorage
   // because we might be in 2D, 2.5D or 3D
 
-  if (! loadData()) {
+  var data = loadData();
+  if ( data ) {
+    restoreData(data);
+  } else {
     var viewC = new ViewControl ();
-    var user = new User();
+    var buttonNavigation = new buttonInterface();
   }
 });
