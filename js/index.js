@@ -162,15 +162,26 @@ function ViewControl () {
   function freeLook () {
 
     var lookPageX, lookPageY;
+    var lookRotZ;
 
     $cam.on("mousedown", function (event) {
       lookPageX = event.pageX;
       lookPageY = event.pageY;
+      lookRotZ = $cam.world("rotateZ");
 
       $(document).on("mousemove", mouse_move);
       $(document).on("mouseup", mouse_up);
 
       event.preventDefault();
+    });
+
+    $(window).on("keydown", function(ev) {
+      switch (ev.keyCode) {
+        case 37:/*left*/  $cam.world("moveX", -25); break;
+        case 38:/*up*/    $cam.world("moveZ", 25);  break;
+        case 39:/*right*/ $cam.world("moveX", 25);  break;
+        case 40:/*down*/  $cam.world("moveZ", -25); break;
+      }
     });
 
     function mouse_move (event) {
@@ -181,7 +192,7 @@ function ViewControl () {
       });
 
       // Reset Z rotation to zero
-      $cam.world("set", {rotateZ:0});
+      $cam.world("set", {rotateZ:parseInt(lookRotZ)});
 
       lookPageX = event.pageX;
       lookPageY = event.pageY;
