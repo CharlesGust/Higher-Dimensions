@@ -17,28 +17,33 @@
       <nav>
         <a href="index.html" class="grid_4 navigation__link--title">Third Dimension Web Design</a>
 
+        <!-- why two level nested div's? The outer <div> is the one that controls
+             the position and clickable region. The inner <div> is the one that is
+             going to move with a three dimensional effect. Why is this necessary?
+             If you try to define the clickable region with the same <div> that
+             is undergoing a three dimensional transform, it is very likely the
+             clickable region will move out from underneath your mouse and generate
+             extraneous mouseenter/mouseleave events that you don't want. -->
         <div class="grid_2 navigation__link__position">
           <div class="navigation__link">
             <a href="article.html">Article</a>
           </div>
         </div>
-
         <div class="grid_2 navigation__link__position">
           <div class="navigation__link">
-            <a href="#">Form</a>
+            <a href="form.html">Form</a>
           </div>
         </div>
         <div class="grid_2 navigation__link__position">
           <div class="navigation__link">
-            <a href="#">Image</a>
+            <a href="image.html">Image</a>
           </div>
         </div>
         <div class="grid_2 navigation__link__position">
           <div class="navigation__link">
-            <a href="#">Video</a>
+            <a href="video.html">Video</a>
           </div>
         </div>
-
       </nav>
     </header>
 
