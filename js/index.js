@@ -249,10 +249,32 @@ function ViewControl () {
 
     $(window).on("keydown", function(ev) {
       switch (ev.keyCode) {
-        case 37:/*left*/  $cam.world("moveX", -25); break;
-        case 38:/*up*/    $cam.world("moveZ", 25);  break;
-        case 39:/*right*/ $cam.world("moveX", 25);  break;
-        case 40:/*down*/  $cam.world("moveZ", -25); break;
+        case 27:/*esc*/
+                          /*
+                          **  It would be nicer to "fly" back, but it isn't
+                          **  working, so teleport back to beginning
+                          var xBack = -($cam.world("x"));
+                          var yBack = -($cam.world("y"));
+                          var zBack = -($cam.world("z") + 400);
+                          var xRotBack = -($cam.world("rotateX"));
+                          var yRotBack = -($cam.world("rotateY"));
+                          var zRotBack = -($cam.world("rotateZ"));
+
+                          $cam.world("moveX", xBack);
+                          $cam.world("moveY", yBack);
+                          $cam.world("moveZ", zBack);
+                          $cam.world("rotateX", xRotBack);
+                          $cam.world("rotateY", yRotBack);
+                          $cam.world("rotateZ", zRotBack);
+                          */
+
+                          $cam.world("set", {x:0,y:0,z:-400});
+                          $cam.world("set", {rotateX:0, rotateY:0, rotateZ:0});
+                          break;
+        case 37:/*left*/  $cam.world("moveX", -25);             break;
+        case 38:/*up*/    $cam.world("moveZ", 25);              break;
+        case 39:/*right*/ $cam.world("moveX", 25);              break;
+        case 40:/*down*/  $cam.world("moveZ", -25);             break;
       }
     });
 
