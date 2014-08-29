@@ -1,4 +1,4 @@
-var mode;
+var mode = 2;
 
 function User() {
   // jWorld doesn't manipulate <a> objects, so we have to insert the <a>
@@ -135,14 +135,13 @@ function ViewControl () {
   var $content = $('.content');
 
   var currentActive = '#base';
-  var baseText = 'This webpage is currently being displayed in regular HTML. Select an option below to see what is possible with the Third Dimension.';
+  var baseText = 'This webpage is currently being displayed in regular HTML. Press the button below to see what is possible with the Third Dimension.';
   var twoFiveText = 'This webpage is currently being displayed in 2.5-D HTML. It retains the general look of a regular website, but the possibilities have expanded.';
   var threeDText = 'This webpage is currently being displayed in 3-D HTML. There is now a whole new dimension of possibilities. Left click and drag to check it out.';
 
-  $('#base').on('click', initializeBase);
-  $('#2-5').on('click', initializeTwoFive);
-  $('#3-D').on('click', initializeThreeD);
-  mode =2;
+
+  $('#mode-change').on('click', modeChange);
+
 
   //Function used in the process to change between modes
   function changeActiveButton (button) {
@@ -158,10 +157,28 @@ function ViewControl () {
   }
   //End changeActiveButton
 
-  function initializeBase () {
-    mode = 2;
 
-/*
+  function modeChange () {
+
+    if (mode == 2) {
+      initializeTwoFive();
+    }
+    else if (mode == 2.5) {
+      initializeThreeD();
+    }
+    else if (mode == 3) {
+      initializeBase();
+    }
+
+  }
+  //End modeChange function
+
+  function initializeBase () {
+
+    location.reload();
+    /*mode = 2;
+
+
     if(currentActive === '#3-D') {
       $cam.world('set', 'clearAll');
 
@@ -172,29 +189,20 @@ function ViewControl () {
       $aside.world('page', 'clearAll');
       $buttons.world('page', 'clearAll');
     }
-    */
+
 
     $('.sidebar__text').text(baseText);
 
-    changeActiveButton('#base');
+    changeActiveButton('#base');*/
   }
   //End initializeBase
 
   function initializeTwoFive () {
     mode =2.5;
 
-/*
-    $header.world('page', {transition:".5s ease-in-out", z: -5});
-    $links.world('page', {transition:".5s ease-in-out", z: 5});
-
-    $aside.world('page', {transition:".5s ease-in-out", z: -5});
-    $buttons.world('page', {transition:".5s ease-in-out", z: 5});
-
-
-*/
     $('.sidebar__text').text(twoFiveText);
 
-    changeActiveButton('#2-5');
+    /*changeActiveButton('#2-5');*/
   }
   //End initializeTwoFive
 
@@ -206,12 +214,12 @@ function ViewControl () {
 
     $cam.world('addElements', $header);
     $header
-      .world('set', {x:-168,y:205,z:20})
+      .world('set', {x:25,y:225,z:20})
       .width(960 * 0.979166667);
 
     $cam.world('addElements', $aside);
     $aside
-      .css({'top':-255, 'left':-450})
+      .css({'top':-160, 'left':-450})
       .width(960 * 0.145833333);
 
     //Checks which page we are currently on so it can
@@ -221,7 +229,7 @@ function ViewControl () {
       $cam.world('addElements', $content);
       $content
         //.world('set', {rotateY:180, x:300, y:-100, z:-800})
-        .css({'top':-345, 'left':-280, 'data-z':-800})
+        .css({'top':-320, 'left':-280})
         .width(960 * 0.75);
 
       addMatrix();
@@ -252,7 +260,9 @@ function ViewControl () {
 
     freeLook();
 
-    changeActiveButton('#3-D');
+    $('.sidebar__button').text('Back to Flat');
+
+    /*changeActiveButton('#3-D');*/
   }
   //End initializeThreeD
 
