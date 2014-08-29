@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Third Dimension Web Design</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/modules.css">
+    <link rel="stylesheet" type="text/css" href="css/states.css">
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jworld-0.9.15.min.js"></script>
+  </head>
+
+  <body class="container_12">
+    <div id="view_container" class="container_12"></div>
+    <header class="navigation">
+      <nav>
+        <a href="index.html" class="grid_4 navigation__link--title">Third Dimension Web Design</a>
+
+        <!-- why two level nested div's? The outer <div> is the one that controls
+             the position and clickable region. The inner <div> is the one that is
+             going to move with a three dimensional effect. Why is this necessary?
+             If you try to define the clickable region with the same <div> that
+             is undergoing a three dimensional transform, it is very likely the
+             clickable region will move out from underneath your mouse and generate
+             extraneous mouseenter/mouseleave events that you don't want. -->
+        <div class="grid_2 navigation__link__position">
+          <div class="navigation__link">
+            <a href="article.html">Article</a>
+          </div>
+        </div>
+        <div class="grid_2 navigation__link__position">
+          <div class="navigation__link">
+            <a href="form.html">Form</a>
+          </div>
+        </div>
+        <div class="grid_2 navigation__link__position">
+          <div class="navigation__link">
+            <a href="image.html">Image</a>
+          </div>
+        </div>
+        <div class="grid_2 navigation__link__position">
+          <div class="navigation__link">
+            <a href="video.html">Video</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <aside class="grid_2 sidebar">
+      <h1 class="sidebar__text--title">Image</h1>
+      <p class="sidebar__text">This webpage is currently being displayed in regular HTML. Press the button below to see what is possible with the Third Dimension.</p>
+      <button id="mode-change" class="sidebar__button">Dimension++
+      </button>
+    </aside>
+
+    <article class="grid_10 content">
+
+      <h1 class="content__text--title">Image Gallery</h1>
+
+      <image id="img1" alt="Computers" class="grid_5 content__image" src="img/gallery1.jpg">
+      <image id="img2" alt="Computers" class="grid_5 content__image" src="img/gallery2.jpg">
+      <image id="img3" alt="Computers" class="grid_5 content__image" src="img/gallery3.jpg">
+      <image id="img4" alt="Phones" class="grid_5 content__image" src="img/gallery4.jpg">
+      <image id="img5" alt="Games" class="grid_5 content__image" src="img/gallery5.png">
+      <image id="img6" alt="Graphics" class="grid_5 content__image" src="img/gallery6.jpg">
+
+    </article>
+
+    <script src="js/index.js" type="text/javascript"></script>
+  </body>
+
+</html>

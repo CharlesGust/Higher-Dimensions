@@ -148,14 +148,34 @@ function ViewControl () {
         .css({'top':-375, 'left':-280})
         .width(960 * 0.75);
     }
+    else if ($('.sidebar__text--title').text() === 'Image'){
+
+      var j = 0;
+
+      for (var i = 1; i < 7; i+=2){
+        $cam.world('addElements', $('#img' + i));
+        $('#img' + i)
+          .world('set', {rotateY:90, x:300, y:100, z:-500 + (-700 * j)})
+          .css({'top':-375, 'left':-280})
+          .width(960 * 0.50);
+
+        $cam.world('addElements', $('#img' + (i + 1)));
+        $('#img' + (i + 1))
+          .world('set', {rotateY:270, x:-600, y:100, z:-500 + (-700 * j)})
+          .css({'top':-375, 'left':-280})
+          .width(960 * 0.50);
+
+        j++;
+      }
+
+      $('.content').remove();
+    }
 
     $('.sidebar__text').text(threeDText);
+    $('.sidebar__button').text('Back to Flat');
 
     freeLook();
 
-    $('.sidebar__button').text('Back to Flat');
-
-    /*changeActiveButton('#3-D');*/
   }
   //End initializeThreeD
 
