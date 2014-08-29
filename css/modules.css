@@ -150,6 +150,7 @@ body {
     float: right;
     clear: none;
     margin-right: 5%;
+    margin-top: 5%;
     min-width: 25%;
   }
 
@@ -223,6 +224,7 @@ body {
     clear: none;
     margin-left: 2%;
     margin-right: 10%;
+    margin-top: 10%;
     margin-top: 3%;
     min-width: 31.25%;
   }
