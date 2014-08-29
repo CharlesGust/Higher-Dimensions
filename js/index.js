@@ -1,7 +1,22 @@
 var mode;
 
 function User() {
-  function makeMouseEvents(jLoc) {
+
+  function spinDiv(th) {
+    var $t = $(th).children();
+    if (mode >= 2)    $t.addClass("navigation__link--2D");
+    if (mode >= 2.5)  $t.addClass("navigation__link--2_5D");
+  }
+
+  function clearDiv(th) {
+    var $t = $(th).children();
+    $t.removeClass("navigation__link--2D");
+    $t.removeClass("navigation__link--2_5D");
+  }
+
+  function makeMouseEvents(elements) {
+    var $jLoc = $(elements);
+
     $jLoc.on("mouseenter click", function(ev) {
       spinDiv(this);
     });
@@ -11,28 +26,9 @@ function User() {
     });
   }
 
-  function firstChildElement(el) {
-    if (!el) return el;
-    while (el.nodeType!=1) {
-      el = el.nextSibling;
-    }
-  }
-
-  function spinDiv(th) {
-    var $t = $(firstChildElement(th.firstChild));
-    if (mode >= 2)    $t.addClass("navigation__link--2D");
-    if (mode >= 2.5)  $t.addClass("navigation__link--2_5D");
-  }
-
-  function clearDiv(th) {
-    var $t = $(firstChildElement(th.firstChild));
-    $t.removeClass("navigation__link--2D");
-    $t.removeClass("navigation__link--2_5D");
-  }
-
   // this class is for all the user interaction we might have.
-  makeMouseEvents($("nav>div"));
-  makeMouseEvents($('.sidebar button'));
+  makeMouseEvents("nav>div");
+  makeMouseEvents(".sidebar button");
 }
 //End User
 
@@ -227,7 +223,38 @@ function ViewControl () {
 }
 //End ViewControl
 
+/*
+**  page.saveData and page.loadData based on versions provided by Rick Strahl
+**  at weblog.west-wind.com
+*/
+saveData = function(id) {
+  if (!sessionStorage) {
+    return null;
+  }
 
+  var data = {
+    id: id,
+    html: $("#view_container").html()
+    };
+    sessionStorage.setItem("index_html", JSON.stringify(data));
+  };
+
+
+loadData = function() {
+  // is sessionStorage API supported?
+  if (!sessionStorage) {
+    return null;
+  }
+
+  var data = sessionStorage.getItem("index_html");
+
+  // was any storage for this page found?
+  if (!data) {
+    return null;
+  } else {
+    return JSON.parse(data);
+  }
+};
 
 
 
@@ -241,7 +268,8 @@ $(document).ready(function() {
   // being, but it may be that we have to get this from SessionStorage
   // because we might be in 2D, 2.5D or 3D
 
-  var viewC = new ViewControl ();
-
-  var user = new User();
+  if (! loadData()) {
+    var viewC = new ViewControl ();
+    var user = new User();
+  }
 });
